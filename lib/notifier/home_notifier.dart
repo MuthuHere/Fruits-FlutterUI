@@ -7,6 +7,10 @@ class HomeNotifier extends BaseNotifier {
 
   int _selectedTabPosition = 0;
 
+  ScrollController _scrollControllerNames = new ScrollController();
+  ScrollController _scrollControllerItems = new ScrollController();
+
+
   HomeNotifier() {
     this.items = listItems;
   }
@@ -22,6 +26,26 @@ class HomeNotifier extends BaseNotifier {
 
   set selectedTabPosition(int value) {
     _selectedTabPosition = value;
+
+    _scrollControllerItems.animateTo(
+        (value * 210).toDouble(), duration: Duration(microseconds: 300),
+        curve: Curves.bounceInOut);
     notifyListeners();
   }
+
+  ScrollController get scrollControllerNames => _scrollControllerNames;
+
+  set scrollControllerNames(ScrollController value) {
+    _scrollControllerNames = value;
+    notifyListeners();
+  }
+
+  ScrollController get scrollControllerItems => _scrollControllerItems;
+
+  set scrollControllerItems(ScrollController value) {
+    _scrollControllerItems = value;
+    notifyListeners();
+  }
+
+
 }

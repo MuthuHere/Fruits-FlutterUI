@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruitapp/styles/colors.dart';
 import 'package:fruitapp/styles/text_styles.dart';
 import 'package:fruitapp/widget/categories.dart';
+import 'package:fruitapp/widget/new_items.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 15.0,
+              horizontal: 10.0,
               vertical: 10,
             ),
             child: Text(
@@ -28,6 +29,8 @@ class _HomePageState extends State<HomePage> {
           ),
 
           Categories(),
+
+          NewItems(),
 
         ],
       ),
