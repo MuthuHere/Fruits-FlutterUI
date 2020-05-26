@@ -30,6 +30,8 @@ dependencies:
   cupertino_icons: ^0.1.3
   provider: ^4.1.2
   velocity_x: ^0.4.0
+  rxdart: ^0.24.1
+  badges: ^1.1.1
 
 
 

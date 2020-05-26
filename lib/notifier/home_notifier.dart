@@ -6,6 +6,7 @@ class HomeNotifier extends BaseNotifier {
   List<ListItem> _items;
 
   int _selectedTabPosition = 0;
+  int _cartItemCount = 0;
 
   ScrollController _scrollControllerNames = new ScrollController();
   ScrollController _scrollControllerItems = new ScrollController();
@@ -44,6 +45,13 @@ class HomeNotifier extends BaseNotifier {
 
   set scrollControllerItems(ScrollController value) {
     _scrollControllerItems = value;
+    notifyListeners();
+  }
+
+  int get cartItemCount => _cartItemCount;
+
+  set cartItemCount(int value) {
+    _cartItemCount = value;
     notifyListeners();
   }
 

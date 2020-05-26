@@ -8,6 +8,10 @@ import 'package:fruitapp/styles/text_styles.dart';
 import 'package:provider/provider.dart';
 
 class Categories extends StatefulWidget {
+  final HomeNotifier homeNotifier;
+
+  Categories(this.homeNotifier);
+
   @override
   _CategoriesState createState() => _CategoriesState();
 }
@@ -101,6 +105,7 @@ class _CategoriesState extends State<Categories> {
                   DETAILS_PAGE,
                   arguments: IntentProductDetails(
                     item,
+                    widget.homeNotifier
                   ),
                 );
               },
@@ -177,7 +182,9 @@ class _CategoriesState extends State<Categories> {
                         color: colorBlack.withOpacity(
                           0.1,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          widget.homeNotifier.cartItemCount += 1;
+                        },
                         child: Text(
                           'Add to cart',
                           style: appNormalText(color: colorWhite, size: 13),
